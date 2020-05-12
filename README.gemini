@@ -1,0 +1,29 @@
+# git-remote-gemini
+
+This is a Git remote helper that allows for basic cloning of git repos over the
+Gemini protocol. Build it and install it in your $PATH somewhere and then run
+`git clone gemini://<domain>/<repo>.git`
+
+You must be running a Gemini server that detects a Git repo and understands the
+following queries:
+
+## List
+
+`gemini://<domain>/<repo>.git?list`
+
+The server must respond with the output of:
+
+`git for-each-ref --format=%(objectname) %(refname) refs/heads/`
+
+## Fast Export
+
+`gemini://<domain>/<repo>.git?fast-export=<ref>`
+
+The server must respond with the output of:
+
+`git fast-export <rev>`
+
+## Notes
+
+This does not support marks files or refspecs yet. It is just a "dumb" clone
+method as mentioned in the Git documentation.

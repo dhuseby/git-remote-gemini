@@ -1,0 +1,14 @@
+[package]
+name = "git-remote-gemini"
+version = "0.1.0"
+authors = ["Dave Huseby <dwh@vi.rs>"]
+edition = "2018"
+description = "Git remote helper for cloning over Gemini"
+license = "Apache-2.0"
+readme = "README.gemini"
+repository = "https://github.com/dhuseby/git-remote-gemini.git"
+
+[dependencies]
+native-tls = "0.2"
+structopt = "0.3"
+url = "2.1"
