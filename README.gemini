@@ -15,6 +15,12 @@ The server must respond with the output of:
 
 `git for-each-ref --format=%(objectname) %(refname) refs/heads/`
 
+and with an optional line indicating the default branch (e.g. `master`) in this
+format:
+`@refs/heads/<branch> HEAD`
+
+and ending with an empty line.
+
 ## Fast Export
 
 `gemini://<domain>/<repo>.git?fast-export=<ref>`
